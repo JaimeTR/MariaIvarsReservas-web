@@ -43,14 +43,17 @@
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
-      _flutter.loader.loadEntrypoint({
+      _flutter.loader.load({
+        entrypointUrl: 'main.dart.js',
         serviceWorker: {
-          serviceWorkerVersion: serviceWorkerVersion,
+          serviceWorkerVersion: '{{flutter_service_worker_version}}',
         }
       }).then(function(engineInitializer) {
         return engineInitializer.initializeEngine();
       }).then(function(appRunner) {
         return appRunner.runApp();
+      }).catch(function(error) {
+        console.error('Error al cargar la aplicación:', error);
       });
     });
   </script>
