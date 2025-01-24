@@ -1,0 +1,113 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter debug_adapter
+
+## exception
+
+SocketException: SocketException: Write failed (OS Error: Broken pipe, errno = 32), port = 0
+
+```
+#0      _NativeSocket.write (dart:io-patch/socket_patch.dart:1252:34)
+#1      _RawSocket.write (dart:io-patch/socket_patch.dart:2010:15)
+#2      _Socket._write (dart:io-patch/socket_patch.dart:2487:18)
+#3      _SocketStreamConsumer.write (dart:io-patch/socket_patch.dart:2222:28)
+#4      _SocketStreamConsumer.addStream.<anonymous closure> (dart:io-patch/socket_patch.dart:2174:11)
+#5      _rootRunUnary (dart:async/zone.dart:1407:47)
+#6      _CustomZone.runUnary (dart:async/zone.dart:1308:19)
+#7      _CustomZone.runUnaryGuarded (dart:async/zone.dart:1217:7)
+#8      _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:365:11)
+#9      _BufferingStreamSubscription._add (dart:async/stream_impl.dart:297:7)
+#10     _SyncStreamControllerDispatch._sendData (dart:async/stream_controller.dart:784:19)
+#11     _StreamController._add (dart:async/stream_controller.dart:658:7)
+#12     _StreamController.add (dart:async/stream_controller.dart:606:5)
+#13     _StreamSinkImpl.add (dart:io/io_sink.dart:154:17)
+#14     _IOSinkImpl.write (dart:io/io_sink.dart:287:5)
+#15     _Socket.write (dart:io-patch/socket_patch.dart:2320:36)
+#16     _StdSink._write (dart:io/stdio.dart:401:13)
+#17     _StdSink.writeln (dart:io/stdio.dart:419:5)
+#18     FlutterDebugAdapter.sendFlutterMessage (package:flutter_tools/src/debug_adapters/flutter_adapter.dart:353:19)
+#19     FlutterDebugAdapter.sendFlutterRequest (package:flutter_tools/src/debug_adapters/flutter_adapter.dart:331:5)
+#20     FlutterDebugAdapter._performRestart (package:flutter_tools/src/debug_adapters/flutter_adapter.dart:722:13)
+#21     FlutterDebugAdapter.customRequest (package:flutter_tools/src/debug_adapters/flutter_adapter.dart:192:15)
+#22     BaseDebugAdapter.handle (package:dds/src/dap/base_debug_adapter.dart:141:20)
+#23     BaseDebugAdapter.handleIncomingRequest (package:dds/src/dap/base_debug_adapter.dart:475:7)
+#24     BaseDebugAdapter._handleIncomingMessage (package:dds/src/dap/base_debug_adapter.dart:309:7)
+#25     ByteStreamServerChannel._readMessage (package:dds/src/dap/protocol_stream.dart:82:18)
+#26     ByteStreamServerChannel.listen.<anonymous closure> (package:dds/src/dap/protocol_stream.dart:53:24)
+#27     _rootRunUnary (dart:async/zone.dart:1407:47)
+#28     _CustomZone.runUnary (dart:async/zone.dart:1308:19)
+#29     _CustomZone.runUnaryGuarded (dart:async/zone.dart:1217:7)
+#30     _BufferingStreamSubscription._sendData (dart:async/stream_impl.dart:365:11)
+#31     _DelayedData.perform (dart:async/stream_impl.dart:541:14)
+#32     _PendingEvents.handleNext (dart:async/stream_impl.dart:646:11)
+#33     _PendingEvents.schedule.<anonymous closure> (dart:async/stream_impl.dart:617:7)
+#34     _rootRun (dart:async/zone.dart:1391:47)
+#35     _CustomZone.run (dart:async/zone.dart:1301:19)
+#36     _CustomZone.runGuarded (dart:async/zone.dart:1209:7)
+#37     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1249:23)
+#38     _rootRun (dart:async/zone.dart:1399:13)
+#39     _CustomZone.run (dart:async/zone.dart:1301:19)
+#40     _CustomZone.runGuarded (dart:async/zone.dart:1209:7)
+#41     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:1249:23)
+#42     _microtaskLoop (dart:async/schedule_microtask.dart:40:21)
+#43     _startMicrotaskLoop (dart:async/schedule_microtask.dart:49:5)
+#44     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#45     _RawReceivePort._handleMessage (dart:isolate-patch/isolate_patch.dart:185:5)
+```
+
+## flutter doctor
+
+```
+[!] Flutter (Channel stable, 3.24.5, on macOS 15.0 24A335 darwin-arm64, locale es-ES)
+    • Flutter version 3.24.5 on channel stable at /Users/h/Desarrollo/flutter
+    ! The flutter binary is not on your path. Consider adding /Users/h/Desarrollo/flutter/bin to your path.
+    ! The dart binary is not on your path. Consider adding /Users/h/Desarrollo/flutter/bin to your path.
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision dec2ee5c1f (4 weeks ago), 2024-11-13 11:13:06 -0800
+    • Engine revision a18df97ca5
+    • Dart version 3.5.4
+    • DevTools version 2.37.3
+    • If those were intentional, you can disregard the above warnings; however it is recommended to use "git" directly to perform update checks and upgrades.
+
+[!] Android toolchain - develop for Android devices (Android SDK version 34.0.0)
+    • Android SDK at /Users/h/Library/Android/sdk
+    ✗ cmdline-tools component is missing
+      Run `path/to/sdkmanager --install "cmdline-tools;latest"`
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/to/macos-android-setup for more details.
+
+[✓] Xcode - develop for iOS and macOS (Xcode 16.2)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Build 16C5032a
+    • CocoaPods version 1.16.2
+
+[✓] Chrome - develop for the web
+    • Chrome at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+
+[✓] Android Studio (version 2024.2)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 21.0.3+-79915917-b509.11)
+
+[✓] VS Code (version 1.95.3)
+    • VS Code at /Applications/Visual Studio Code.app/Contents
+    • Flutter extension version 3.102.0
+
+[✓] Connected device (3 available)
+    • macOS (desktop)                 • macos                 • darwin-arm64   • macOS 15.0 24A335 darwin-arm64
+    • Mac Designed for iPad (desktop) • mac-designed-for-ipad • darwin         • macOS 15.0 24A335 darwin-arm64
+    • Chrome (web)                    • chrome                • web-javascript • Google Chrome 131.0.6778.140
+
+[✓] Network resources
+    • All expected network resources are available.
+
+! Doctor found issues in 2 categories.
+```
